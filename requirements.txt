@@ -8,3 +8,6 @@ python-jose[cryptography]>=3.3.0
 python-multipart>=0.0.5   # For form data (OAuth2PasswordRequestForm)
 email-validator>=1.3.0    # For email validation in Pydantic schemas
 uuid>=1.30                # For UUID generation
+greenlet
+psycopg2
+python-dotenv

@@ -2,13 +2,13 @@ from typing import Any, List, Annotated
 from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from app import crud, schemas
+from app.schemas import user
 from app.api import deps
 from app.db.models import User # If needed for type hints
 
 router = APIRouter()
 
-@router.get("/me", response_model=schemas.User)
+@router.get("/me", response_model=user.User)
 async def read_users_me(
     current_user: Annotated[User, Depends(deps.get_current_active_user)]
 ) -> Any:
